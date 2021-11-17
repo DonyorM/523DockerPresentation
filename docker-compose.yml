@@ -1,5 +1,6 @@
 version: "3.7"
 
+# This is currently set up for SQLite, you can switch to mysql by uncommenting the below line
 services:
   webapp:
     build:
@@ -9,3 +10,18 @@ services:
       - 3000:3000
     volumes:
       - ./src:/app/src
+  #   environment:
+  #     MYSQL_HOST: db
+  #     MYSQL_PASSWORD: docker_pass
+  #     MYSQL_USER: docker_user
+  #     MYSQL_DB: presentation
+
+  # db:
+  #   image: mysql
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root_pass
+  #     MYSQL_PASSWORD: docker_pass
+  #     MYSQL_USER: docker_user
+  #     MYSQL_DATABASE: presentation
